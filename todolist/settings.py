@@ -1,9 +1,9 @@
-
+import environ
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+env = environ.Env(DEBUG=(bool, False))
 BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env.read_env(BASE_DIR.joinpath('.env/.env'))
+environ.Env.read_env(BASE_DIR.joinpath('.env/.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todolist',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -112,3 +114,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
