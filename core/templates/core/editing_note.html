@@ -1,0 +1,15 @@
+{% extends 'core/layout.html' %}
+{% block title %} editing_note {% endblock %}
+
+{% block body %}
+    <div id="top_bar">
+        <button id="save_note" class="top_buttons">
+            <i id="save_icon" class="bi bi-cloud-arrow-up-fill h3 top-bar-icon"></i>
+            <p class="top-bar-element-text"> Сохранить заметку</p>
+        </button>
+    </div>
+    <div id="create-element" >
+        <input id="create-head" class="input-editing_note" type="text" value="Заголовок 1">
+        <textarea id="create-body" class="input-editing_note" placeholder="Заполните заметку"></textarea>
+    </div>
+{% endblock %}

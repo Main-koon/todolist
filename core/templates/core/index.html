@@ -1,0 +1,22 @@
+{% extends 'core/layout.html' %}
+{% block title %} Главная страница {% endblock %}
+{% block body %}
+    <div id="top_bar">
+        <button id="add_note" class="top_buttons">
+            <i id="plus_icon" class="bi bi-plus h1 top-bar-icon"></i>
+            <p id="top_bar_element_text_add" class="top-bar-element-text">Добавить заметку</p>
+        </button>
+    </div>
+    {% for note in notes %}
+        <div>
+            <button class="note-element">
+                <h3 id="note_title">{{ note.name }}</h3>
+                <p id="note_description">{{ note.description }}</p>
+                <small>Дата: {{ note.date }}</small>
+            </button>
+        </div>
+    {% empty %}
+        <p>Нет записей.</p>
+    {% endfor %}
+
+{% endblock %}

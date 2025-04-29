@@ -1,0 +1,5 @@
+/.env
+/todolistDB.db
+/db.sqlite3
+/.idea
+/todolistDB.db-journal
